@@ -1,0 +1,16 @@
+.salaryForm{
+    width: 680px;
+    height: 616px;
+    border: 1px solid #E0E0E0;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    padding: 22px;
+}
+
+.salaryReport{
+    width: 480px;
+    height: 614px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    padding: 22px;
+}
