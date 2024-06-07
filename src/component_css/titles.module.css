@@ -1,0 +1,35 @@
+.mainTitle{
+    width: 209px;
+    height: 32px;
+}
+.mainTitle h1{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.02px;
+    color: black;
+}
+/* /////////////////////////////////////////////// */
+.fieldLabel{
+    width: 94px;
+    height: 24px;
+}
+.fieldLabel label{
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.1px;
+}
+/* /////////////////////////////////////////////// */
+.descriptiveTitle{
+    width: 248px;
+    height: 20px;
+}
+.descriptiveTitle h1{
+    color: #757575;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    align-items: right;
+}

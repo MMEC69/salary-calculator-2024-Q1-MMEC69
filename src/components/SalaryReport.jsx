@@ -1,5 +1,5 @@
 import React from 'react';
-import {DescriptiveTitle, MainTitle, ContentText} from "./Titles";
+import {DescriptiveTitle, MainTitle, ContentText, SubTitle} from "./Titles";
 import styles from "../component_css/layout.module.css";
 
 export function SalaryReport(props) {
@@ -67,7 +67,7 @@ export function SalaryReport(props) {
 {/* /////////////////////////////////////////////////// */}
             <div>
                 <div>
-                    <MainTitle
+                    <SubTitle
                         title = "Net Salary (Take Home)"
                     />
                 </div>

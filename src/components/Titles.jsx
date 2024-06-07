@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from "../component_css/titles.module.css";
 
 export function MainTitle(props) {
     const {
@@ -6,7 +7,7 @@ export function MainTitle(props) {
     } = props;
 
     return (
-        <div>
+        <div className={styles.mainTitle}>
             <h1>{title}</h1>
         </div>
     );
@@ -19,7 +20,7 @@ export function SubTitle(props) {
 
     return (
         <div>
-            <h1>{title}</h1>
+            <p>{title}</p>
         </div>
     );
 }
@@ -30,7 +31,7 @@ export function DescriptiveTitle(props) {
     } = props;
 
     return (
-        <div>
+        <div className={styles.descriptiveTitle}>
             <h1>{title}</h1>
         </div>
     );
@@ -55,7 +56,7 @@ export function Label(props) {
     } = props;
 
     return (
-        <div>
+        <div className={styles.fieldLabel}>
             <label htmlFor = {name}>{title}</label>
         </div>
     );

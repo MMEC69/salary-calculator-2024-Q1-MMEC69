@@ -1,6 +1,7 @@
 import React from 'react';
 import {Close} from "./Buttons";
 import {CheckBox} from "./CheckBox";
+import styles from "../component_css/inputFields.module.css"
 
 export function InputField1(props) {
     const {
@@ -10,7 +11,7 @@ export function InputField1(props) {
         onChange
     } = props;
   return (
-    <div>
+    <div className={styles.inputField1}>
         <input 
             type={type}
             value={value}
@@ -29,7 +30,7 @@ export function InputField2(props) {
       onChange
   } = props;
   return (
-    <div>
+    <div className={styles.inputField2}>
         <input 
             type={type}
             value={value}

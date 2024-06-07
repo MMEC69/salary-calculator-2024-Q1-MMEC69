@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import closeIcon from "../assets/closeIcon.png";
+import styles from "../component_css/buttons.module.css";
+import addIcon from "../assets/addIcon.png";
 
 export function Reset(props) {
     const {
@@ -22,11 +25,9 @@ export function AddingButton(props) {
         onClick
     } = props;
   return (
-    <div>
-        <button
-            onClick={onClick}
-        >
-            {title}
+    <div className={styles.addingButton}>
+        <button onClick={onClick}>
+            <img src={addIcon} alt="Add Icon"/> <p>{title}</p>
         </button>
     </div>
   );
@@ -38,11 +39,11 @@ export function Close(props) {
         onClick
     } = props;
   return (
-    <div>
+    <div className={styles.closeButton}>
         <button
             onClick={onClick}
         >
-            Close
+            <img src={closeIcon} alt="Close Icon" />
         </button>
     </div>
   );

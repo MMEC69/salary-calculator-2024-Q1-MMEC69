@@ -1,0 +1,23 @@
+.inputField1{
+    width: 356px;
+    height: 48px;
+    border-radius: 5px;
+}
+.inputField1 input{
+    width: 356px;
+    height: 48px;
+    border-radius: 5px;
+    border: 1px solid #E0E0E0;
+}
+/* /////////////////////////////////////////////// */
+.inputField2{
+    width: 356px;
+    height: 48px;
+    border-radius: 5px;
+}
+.inputField2 input{
+    width: 356px;
+    height: 48px;
+    border-radius: 5px;
+    border: 1px solid #E0E0E0;
+}
