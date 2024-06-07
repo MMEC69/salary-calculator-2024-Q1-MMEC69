@@ -11,7 +11,7 @@
 }
 /* /////////////////////////////////////////////// */
 .fieldLabel{
-    width: 94px;
+    width: auto;
     height: 24px;
 }
 .fieldLabel label{

@@ -1,6 +1,6 @@
 import React from 'react';
 import {MainTitle, Label, DescriptiveTitle} from "./Titles";
-import {InputField1, EarningsInput, DeductionsInput} from "./InputFields";
+import {InputField1, EarningsInput, DeductionsInput, InputField3} from "./InputFields";
 import {AddingButton, Reset} from "./Buttons";
 import {HorizonatalLine} from "./Deco";
 import styles from "../component_css/layout.module.css";
@@ -24,7 +24,7 @@ export function SalaryForm() {
                     title = "Basic Salary"
                     name = "basicSalary"
                 />
-                <InputField1
+                <InputField3
                     type = "number"
                     value = ""
                     placeholder = "Basic Salary"
@@ -52,6 +52,21 @@ export function SalaryForm() {
                     onChange2 = ""
                     onChange3 = ""
                     onChange4 = ""
+                    titleCheckBox = "EPF/ETF"
+                />
+
+                <EarningsInput
+                    type1 = "text"
+                    type2 = "number"
+                    value1 = ""
+                    value2 = ""
+                    placeholder1 = "Pay Details (Title)"
+                    placeholder2 = "Amount"
+                    onChange1 = ""
+                    onChange2 = ""
+                    onChange3 = ""
+                    onChange4 = ""
+                    titleCheckBox = "EPF/ETF"
                 />
             </div>
             
@@ -62,29 +77,32 @@ export function SalaryForm() {
 
             <HorizonatalLine/>
 
-            <Label
-                title = "Deductions"
-                name = "deductions"
-            />
-            <DescriptiveTitle
-                title = "Salary Advances, Loan, Deductions and all"
-            />
-            <DeductionsInput
-                type1 = "text"
-                type2 = "number"
-                value1 = ""
-                value2 = ""
-                placeholder1 = "Deduct Details (Title)"
-                placeholder2 = "Amount"
-                onChange1 = ""
-                onChange2 = ""
-                onChange3 = ""
-            />
+            <div className={styles.formField}>
+                <Label
+                    title = "Deductions"
+                    name = "deductions"
+                />
+                <DescriptiveTitle
+                    title = "Salary Advances, Loan, Deductions and all"
+                />
+                <DeductionsInput
+                    type1 = "text"
+                    type2 = "number"
+                    value1 = ""
+                    value2 = ""
+                    placeholder1 = "Deduct Details (Title)"
+                    placeholder2 = "Amount"
+                    onChange1 = ""
+                    onChange2 = ""
+                    onChange3 = ""
+                />
 
-            <AddingButton
-                title = "Add New Deduction"
-                onClick = ""
-            />
+                <AddingButton
+                    title = "Add New Deduction"
+                    onClick = ""
+                />
+            </div>
+            
         </form>
     </div>
   )

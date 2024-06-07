@@ -1,6 +1,6 @@
 .salaryForm{
     width: 680px;
-    height: 616px;
+    min-height: 616px;
     border: 1px solid #E0E0E0;
     background-color: #FAFAFA;
     border-radius: 5px;
@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 2px 0px;
+    margin: 0px 0px 20px 0px;
 }
 /* /////////////////////////////////////////////// */
 .formField{
@@ -23,8 +23,60 @@
 /* /////////////////////////////////////////////// */
 .salaryReport{
     width: 480px;
-    height: 614px;
+    min-height: 614px;
     background-color: #FFFFFF;
     border: 1px solid #E0E0E0;
     padding: 22px;
+}
+/* /////////////////////////////////////////////// */
+.salesReportTop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+/* /////////////////////////////////////////////// */
+.salesReportNames{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0px 0px 0px -10px;
+}
+.salesReportValues{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: right;
+    margin: 0px 0px 0px -100px;
+}
+/* /////////////////////////////////////////////// */
+.netSalaryField{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 24px -5px 24px -5px;
+    padding: 7px;
+    border: 0.78px solid #E0E0E0;
+    align-items: center;
+}
+.netSalaryValue{
+    text-align: right;
+}
+/* /////////////////////////////////////////////// */
+.contributionField{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.contributionLabel{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.contributionValues{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.CTCField{
+    margin: 40px 0px 0px 0px;
 }

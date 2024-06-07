@@ -41,6 +41,26 @@ export function InputField2(props) {
   );
 }
 
+export function InputField3(props) {
+  const {
+      type,
+      value,
+      placeholder,
+      onChange
+  } = props;
+return (
+  <div className={styles.inputField3}>
+      <input 
+          type={type}
+          value={value}
+          placeholder={placeholder}
+          onChange={onChange} 
+      />
+  </div>
+);
+}
+
+
 export function EarningsInput(props) {
   const {
       type1,
@@ -52,7 +72,8 @@ export function EarningsInput(props) {
       onChange1,
       onChange2,
       onChange3,
-      onChange4
+      onChange4,
+      titleCheckBox
   } = props;
   return (
     <div className={styles.earningsInput}>
@@ -68,12 +89,16 @@ export function EarningsInput(props) {
           placeholder = {placeholder2}
           onChange = {onChange2}
       />
-      <Close
-        onChange = {onChange3}
-      />
-      <CheckBox
-        onChange = {onChange4}
-      />
+      <div className={styles.buttonOptions}>
+        <Close
+          onChange = {onChange3}
+        />
+        <CheckBox
+          onChange = {onChange4}
+          title = {titleCheckBox}
+        />
+      </div>
+      
     </div>
   );
 }
@@ -91,7 +116,7 @@ export function DeductionsInput(props) {
       onChange3,
   } = props;
   return (
-    <div>
+    <div className={styles.deductionInput}>
       <InputField1
           type = {type1}
           value = {value1}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {DescriptiveTitle, MainTitle, ContentText, SubTitle} from "./Titles";
+import {DescriptiveTitle, MainTitle, ContentText, Label} from "./Titles";
 import styles from "../component_css/layout.module.css";
 
 export function SalaryReport(props) {
@@ -18,12 +18,12 @@ export function SalaryReport(props) {
         <div className={styles.salaryReport}>
             <div className={styles.topContent}>
                 <MainTitle
-                        title = "Your salary"
+                    title = "Your salary"
                 />
             </div>
 {/* /////////////////////////////////////////////////// */}
-            <div>
-                <div>
+            <div className={styles.salesReportTop}>
+                <div className={styles.salesReportNames}>
                     <DescriptiveTitle
                         title = "Items"
                     />
@@ -45,12 +45,12 @@ export function SalaryReport(props) {
 
                 </div>
 {/* /////////////////////////////////////////////////// */}
-                <div>
+                <div className={styles.salesReportValues}>
                     <DescriptiveTitle
                         title = "Amount"
                     />
                     <ContentText
-                        title = {basicSalary}
+                        title = "ddd"
                     />
                     <ContentText
                         title = {grossEarning}
@@ -67,26 +67,23 @@ export function SalaryReport(props) {
                 </div>
             </div>
 {/* /////////////////////////////////////////////////// */}
-            <div>
-                <div>
-                    <SubTitle
+            <div className={styles.netSalaryField}>
+                <div className={styles.netSalaryLabel}>
+                    <Label
                         title = "Net Salary (Take Home)"
                     />
                 </div>
 
-                <div>
-                    <MainTitle
-                        title = {netSalary}
+                <div className={styles.netSalaryValue}>
+                    <Label
+                        title = "hhh"
                     />
                 </div>
             </div>
             
-            <DescriptiveTitle
-                title = "Contribution from the Employer"
-            />
 {/* /////////////////////////////////////////////////// */}
-            <div>
-                <div>
+            <div className={styles.contributionField}>
+                <div className={styles.contributionLabel}>
                     <DescriptiveTitle
                         title = "Contribution from the Employer"
                     />
@@ -96,12 +93,9 @@ export function SalaryReport(props) {
                     <ContentText
                         title = "Employer ETF (3%)"
                     />
-                    <ContentText
-                        title = "CTC(Cost to Company)"
-                    />
                 </div>
 {/* /////////////////////////////////////////////////// */}
-                <div>
+                <div className={styles.contributionValues}>
                     <DescriptiveTitle
                         title = ""
                     />
@@ -111,10 +105,17 @@ export function SalaryReport(props) {
                     <ContentText
                         title = {employeerETF}
                     />
+                </div>
+            </div>
+            <div className={styles.CTCField}>
+                <ContentText
+                    title = "CTC(Cost to Company)"
+                />
+            </div>
+                <div className={styles.CTCField}>
                     <ContentText
                         title = {CTC}
                     />
-                </div>
             </div>
         </div>
     );

@@ -2,7 +2,6 @@
     width: 32px;
     height: 32px;
     border: none;
-    background-color: aqua;
 }
 .closeButton button{
     width: 32px;
@@ -23,6 +22,7 @@
     width: 162px;
     height: 40px;
     text-align: center;
+    margin: -2px 0px 10px -10px;
 }
 .addingButton button{
     width: 162px;
