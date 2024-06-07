@@ -55,7 +55,7 @@ export function EarningsInput(props) {
       onChange4
   } = props;
   return (
-    <div>
+    <div className={styles.earningsInput}>
       <InputField1
           type = {type1}
           value = {value1}

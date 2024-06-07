@@ -2,6 +2,7 @@
     width: 32px;
     height: 32px;
     border: none;
+    background-color: aqua;
 }
 .closeButton button{
     width: 32px;
@@ -9,11 +10,13 @@
     border: none;
     background-color: #FAFAFA;
     border-radius: 50%;
+    text-align: center;
 }
 .closeButton img{
     width: 32px;
     height: 32px;
     border-radius: 50%;
+    margin: -11px;
 }
 /* /////////////////////////////////////////////// */
 .addingButton{
@@ -41,6 +44,36 @@
 .addingButton img{
     width: 24px;
     height: 24px;
+    background-color: #FAFAFA;
+    border: none;
+}
+/* /////////////////////////////////////////////// */
+.reset{
+    width: 66px;
+    height: 40px;
+    text-align: center;
+}
+.reset button{
+    width: 66px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    line-height: 20px;
+    text-align: center;
+    align-items: center;
+    background-color: #FAFAFA;
+    border: none;
+}
+.reset p{
+    font-size: 14px;
+    line-height: 20px;
+    color: #0052EA;
+    font-weight: 500;
+}
+.reset img{
+    width: 21px;
+    height: 18px;
     background-color: #FAFAFA;
     border: none;
 }

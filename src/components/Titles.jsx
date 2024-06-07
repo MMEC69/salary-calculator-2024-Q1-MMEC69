@@ -43,7 +43,7 @@ export function ContentText(props) {
     } = props;
 
     return (
-        <div>
+        <div className={styles.contentText}>
             <h1>{title}</h1>
         </div>
     );

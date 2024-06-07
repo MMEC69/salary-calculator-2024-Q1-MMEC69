@@ -16,9 +16,11 @@ export function SalaryReport(props) {
     } = props;
     return (
         <div className={styles.salaryReport}>
-            <MainTitle
-                    title = "Your salary"
-            />
+            <div className={styles.topContent}>
+                <MainTitle
+                        title = "Your salary"
+                />
+            </div>
 {/* /////////////////////////////////////////////////// */}
             <div>
                 <div>

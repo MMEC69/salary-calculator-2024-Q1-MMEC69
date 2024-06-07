@@ -16,8 +16,15 @@
     border-radius: 5px;
 }
 .inputField2 input{
-    width: 356px;
+    width: 136px;
     height: 48px;
     border-radius: 5px;
     border: 1px solid #E0E0E0;
+}
+/* /////////////////////////////////////////////// */
+.earningsInput{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
 }
