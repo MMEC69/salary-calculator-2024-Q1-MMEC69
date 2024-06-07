@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {MainTitle, Label, DescriptiveTitle} from "./Titles";
-import {InputField1, EarningsInput, DeductionsInput, InputField3} from "./InputFields";
+import {EarningsInput, DeductionsInput, InputField3} from "./InputFields";
 import {AddingButton, Reset} from "./Buttons";
 import {HorizonatalLine} from "./Deco";
 import styles from "../component_css/layout.module.css";
+import { GlobalContext } from '../context/global_context';
 
 export function SalaryForm() {
+    const {
+        salaryDetails, 
+        setSalaryDetails
+    } = useContext(GlobalContext);
+
+    const {
+        basicSalary
+    } = salaryDetails;
+
+    const handleSalary = () => {
+
+    }
+    
   return (
     <div className={styles.salaryForm}>
         <div className={styles.topContent}>
@@ -26,9 +40,12 @@ export function SalaryForm() {
                 />
                 <InputField3
                     type = "number"
-                    value = ""
+                    value = {basicSalary}
                     placeholder = "Basic Salary"
-                    onChange = ""
+                    onChange = {(e) => {
+                        setSalaryDetails({...salaryDetails, basicSalary: e.target.value});
+                        handleSalary();
+                    }}
                 />
             </div>
             

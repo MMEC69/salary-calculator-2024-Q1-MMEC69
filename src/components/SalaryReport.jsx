@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {DescriptiveTitle, MainTitle, ContentText, Label} from "./Titles";
 import styles from "../component_css/layout.module.css";
+import { GlobalContext } from '../context/global_context';
 
-export function SalaryReport(props) {
+export function SalaryReport() {
     const {
-        basicSalary,
-        grossEarning,
-        grossDeduction,
-        emplyeeEPF,
-        APIT,
-        netSalary,
-        employeerEPF,
-        employeerETF,
-        CTC
-    } = props;
+        salaryDetails, 
+        setSalaryDetails
+    } = useContext(GlobalContext);
+
+    const {
+        basicSalary
+    } = salaryDetails;
+
     return (
         <div className={styles.salaryReport}>
             <div className={styles.topContent}>
@@ -50,19 +49,19 @@ export function SalaryReport(props) {
                         title = "Amount"
                     />
                     <ContentText
-                        title = "ddd"
+                        title = {basicSalary}
                     />
                     <ContentText
-                        title = {grossEarning}
+                        title = ""
                     />
                     <ContentText
-                        title = {grossDeduction}
+                        title = ""
                     />
                     <ContentText
-                        title = {emplyeeEPF}
+                        title = ""
                     />
                     <ContentText
-                        title = {APIT}
+                        title = ""
                     />
                 </div>
             </div>
@@ -100,10 +99,10 @@ export function SalaryReport(props) {
                         title = ""
                     />
                     <ContentText
-                        title = {employeerEPF}
+                        title = ""
                     />
                     <ContentText
-                        title = {employeerETF}
+                        title = ""
                     />
                 </div>
             </div>
@@ -114,7 +113,7 @@ export function SalaryReport(props) {
             </div>
                 <div className={styles.CTCField}>
                     <ContentText
-                        title = {CTC}
+                        title = ""
                     />
             </div>
         </div>
