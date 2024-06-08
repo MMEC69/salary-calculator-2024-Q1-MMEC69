@@ -176,7 +176,7 @@ export function SalaryForm() {
             />
             <Reset
                 title = "Reset"
-                onClick = ""
+                onClick = {(e)=> {window.location.reload(false);}}
             />
         </div>
         

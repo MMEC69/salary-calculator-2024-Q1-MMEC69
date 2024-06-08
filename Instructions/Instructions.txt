@@ -1,0 +1,18 @@
+Application - salary-calculator-2024-Q1-MMEC69
+Name : Eronne Cooray
+Contact : 0711498247
+Email: cooray2108@gmail.com
+Instructions
+1.	First install node 
+a.	Link - https://nodejs.org/en/download/package-manager/current 
+2.	Then download the project from the following git repo 
+a.	Link - https://github.com/MMEC69/salary-calculator-2024-Q1-MMEC69.git 
+3.	Open the file from VS Code
+4.	Open the command prompt and locate the file
+a.	cd to - salary-calculator-2024-Q1-MMEC69
+5.	Then run “npm run dev”
+6.	Open the URL local server with a browser
+7.	Enjoy…….
+Note – When adding values make sure to fill all the fields in order to avoid false results
+
+
