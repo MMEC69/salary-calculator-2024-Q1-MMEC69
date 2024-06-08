@@ -5,7 +5,6 @@ import './App.css'
 import { GlobalContextProvider } from "./context/global_context";
 
 function App() {
-
   return (
     <div className="content">
       <GlobalContextProvider>

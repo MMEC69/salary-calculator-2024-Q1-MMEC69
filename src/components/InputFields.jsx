@@ -79,6 +79,7 @@ export function EarningsInput(props) {
       onChange4,
       name1,
       name2,
+      name3,
       titleCheckBox,
       index
   } = props;
@@ -106,6 +107,7 @@ export function EarningsInput(props) {
         <CheckBox
           onChange = {onChange4}
           title = {titleCheckBox}
+          name3 = {name3}
         />
       </div>
       

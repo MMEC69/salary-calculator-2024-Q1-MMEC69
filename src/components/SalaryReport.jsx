@@ -7,7 +7,13 @@ export function SalaryReport() {
     const {
         basicSalary, 
         grossEarning,
-        grossDeduct
+        grossDeduct,
+        employeeEPF,
+        APIT,
+        netSalary,
+        employeeEPF12,
+        employeeEPF3,
+        CTC
     } = useContext(GlobalContext);
 
     return (
@@ -55,10 +61,10 @@ export function SalaryReport() {
                         title = {`- ${grossDeduct}`}
                     />
                     <ContentText
-                        title = ""
+                        title = {employeeEPF}
                     />
                     <ContentText
-                        title = ""
+                        title = {APIT}
                     />
                 </div>
             </div>
@@ -72,7 +78,7 @@ export function SalaryReport() {
 
                 <div className={styles.netSalaryValue}>
                     <Label
-                        title = "hhh"
+                        title = {netSalary}
                     />
                 </div>
             </div>
@@ -96,10 +102,10 @@ export function SalaryReport() {
                         title = ""
                     />
                     <ContentText
-                        title = ""
+                        title = {employeeEPF12}
                     />
                     <ContentText
-                        title = ""
+                        title = {employeeEPF3}
                     />
                 </div>
             </div>
@@ -108,10 +114,10 @@ export function SalaryReport() {
                     title = "CTC(Cost to Company)"
                 />
             </div>
-                <div className={styles.CTCField}>
-                    <ContentText
-                        title = ""
-                    />
+            <div className={styles.CTCField}>
+                <ContentText
+                    title = {CTC}
+                />
             </div>
         </div>
     );

@@ -17,24 +17,28 @@ export function SalaryForm() {
         items,
         setItems,
         items2,
-        setItems2
+        setItems2,
+        EPF,
+        setEPF,
+        employeeEPF,
+        setEmployeeEPF,
+        APIT,
+        setAPIT,
+        netSalary,
+        setNetSalary,
+        employeeEPF12,
+        setEmployeeEPF12,
+        setEmployeeEPF3,
+        employeeEPF3,
+        setCTC,
+        CTC
     } = useContext(GlobalContext);
 
     //Main--------------------------------------------
     const handleSalary = async () => {
-        //total earning
         let totalEarning = 0;
-        if(items.length > 0){
-            items?.map((item) => {
-                console.log(1)
-                const amount = parseFloat(item.amount);
-                totalEarning = amount + totalEarning;
-            });
-        }
-        if(isNaN(totalEarning)){
-            totalEarning = 0;
-        }
 
+        //basic
         let basic = parseFloat(basicSalary);
         if(isNaN(basic)){
             basic = 0;
@@ -42,6 +46,28 @@ export function SalaryForm() {
             totalEarning = totalEarning + basic;
         }
         
+        //total earning
+        let EPFTotal;
+        if(basicSalary > 0){
+            EPFTotal = basicSalary;
+        }else{
+            EPFTotal = 0;
+        }
+        if(items.length > 0){
+            items?.map((item) => {
+                const amount = parseFloat(item.amount);
+                totalEarning = amount + totalEarning;
+                if(item.epf === "true"){
+                    EPFTotal = EPFTotal + amount;
+                }
+            });
+        }else{
+            EPFTotal = basicSalary;
+        }
+        if(isNaN(totalEarning)){
+            totalEarning = 0;
+        }
+
         //gross deduct
         let grossDeductValue = 0;
         if(items2.length > 0){
@@ -56,8 +82,53 @@ export function SalaryForm() {
 
         //gross earning
         const grossEarningValue = totalEarning - grossDeductValue;
+
+        //APIT
+        let APTIValue = 0;
+        if(grossEarningValue <= 100000){
+            APTIValue = 0;
+        }else if(grossEarningValue > 100000 && grossEarningValue <= 141667){
+            APTIValue = grossEarningValue * (6/100) - 6000;
+        }else if(grossEarningValue > 141667 && grossEarningValue <= 183333){
+            APTIValue = grossEarningValue * (12/100) - 14500;
+        }else if(grossEarningValue > 183333 && grossEarningValue <= 225000){
+            APTIValue = grossEarningValue * (18/100) - 25500;
+        }else if(grossEarningValue > 225000 && grossEarningValue <= 266667){
+            APTIValue = grossEarningValue * (24/100) - 39000;
+        }else if(grossEarningValue > 266667 && grossEarningValue <= 308333){
+            APTIValue = grossEarningValue * (30/100) - 55000;
+        }else if(grossEarningValue > 308333){
+            APTIValue = grossEarningValue * (36/100) - 73500;
+        }else{
+            APTIValue = 0;
+        }
+
+        //netSalary
+        const netSalaryValue = grossEarningValue - employeeEPF - APIT;
+        setNetSalary(netSalaryValue);
+
+        //state setting
+        setAPIT(APTIValue);
+        let grossSalaryEPF = 0;
+        let employeeEPFValue = 0;
+        let employeeEPF12Value = 0
+        let employeeEPF3Value = 0
+        if(EPFTotal > 0){
+            grossSalaryEPF = EPFTotal -grossDeductValue;
+            if(grossSalaryEPF > 0){
+                employeeEPFValue = grossSalaryEPF * (8/100);
+                employeeEPF12Value = grossSalaryEPF * (12/100);
+                employeeEPF3Value = grossSalaryEPF * (3/100);
+                setEmployeeEPF(employeeEPFValue);
+                setEmployeeEPF12(employeeEPF12Value);
+                setEmployeeEPF3(employeeEPF3Value);
+            }
+        }
         setGrossDeduct(grossDeductValue);
         setGrossEarning(grossEarningValue);
+
+        let CTCValue = grossEarningValue + employeeEPF12Value;
+        setCTC(CTCValue);
     }
     //Earning--------------------------------------------
     const handleEarnings = (e, index) => {
@@ -141,6 +212,7 @@ export function SalaryForm() {
                         type2 = "number"
                         name1 = "payDetails"
                         name2 = "amount"
+                        name3 = "epf"
                         value1 = {item.payDetails}
                         value2 = {item.amount}
                         placeholder1 = "Pay Details (Title)"
@@ -152,7 +224,10 @@ export function SalaryForm() {
                         }}
                         onChange3 = {handleAddClose}
                         index = {index}
-                        onChange4 = ""
+                        onChange4 = {(e) => {
+                            handleEarnings(e, index);
+                            handleSalary();
+                        }}
                         titleCheckBox = "EPF/ETF"
                     />);
 
@@ -209,8 +284,6 @@ export function SalaryForm() {
                         onChange3 = {handleDeductClose}
                     />);
                 })}
-                
-
                 <AddingButton
                     title = "Add New Deduction"
                     onClick = {handleDeduct}
