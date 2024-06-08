@@ -20,22 +20,46 @@ export function SalaryForm() {
         setItems2
     } = useContext(GlobalContext);
 
-    const handleSalary = () => {
-        let totalGrossEarning = 0;
-        items.map((item) => {
-            const amount = parseFloat(item.amount);
-            totalGrossEarning = amount + totalGrossEarning;
-        });
-        setGrossEarning(totalGrossEarning);
+    //Main--------------------------------------------
+    const handleSalary = async () => {
+        //total earning
+        let totalEarning = 0;
+        if(items.length > 0){
+            items?.map((item) => {
+                console.log(1)
+                const amount = parseFloat(item.amount);
+                totalEarning = amount + totalEarning;
+            });
+        }
+        if(isNaN(totalEarning)){
+            totalEarning = 0;
+        }
 
-        let totalGrossDeduct = 0;
-        items2.map((item) => {
-            const amount = parseFloat(item.amount);
-            totalGrossDeduct = amount + totalGrossDeduct;
-        });
-        setGrossDeduct(totalGrossDeduct);
+        let basic = parseFloat(basicSalary);
+        if(isNaN(basic)){
+            basic = 0;
+        }else{
+            totalEarning = totalEarning + basic;
+        }
+        
+        //gross deduct
+        let grossDeductValue = 0;
+        if(items2.length > 0){
+            items2?.map((item) => {
+                const amount = parseFloat(item.amount);
+                grossDeductValue = amount + grossDeductValue;
+            });
+        }
+        if(isNaN(grossDeductValue)){
+            grossDeductValue = 0;
+        }
+
+        //gross earning
+        const grossEarningValue = totalEarning - grossDeductValue;
+        setGrossDeduct(grossDeductValue);
+        setGrossEarning(grossEarningValue);
     }
-
+    //Earning--------------------------------------------
     const handleEarnings = (e, index) => {
         const {name, value} = e.target;
         const earnings = [...items];
@@ -43,15 +67,6 @@ export function SalaryForm() {
         setItems(earnings);
         console.log(items);
     }
-
-    const handleDeducts = (e, index) => {
-        const {name, value} = e.target;
-        const deducts = [...items2];
-        deducts[index][name] = value;
-        setItems2(deducts);
-        console.log(items2);
-    }
-
     const handleAdd = (e) => {
         e.preventDefault();
         setItems([...items, {}]);
@@ -62,7 +77,7 @@ export function SalaryForm() {
         earningToBeDeleted.splice(index, 1);
         setItems(earningToBeDeleted);
     }
-
+    //Deduct--------------------------------------------
     const handleDeduct = (e) => {
         e.preventDefault();
         setItems2([...items2, {}]);
@@ -73,6 +88,14 @@ export function SalaryForm() {
         deductToBeDeleted.splice(index, 1);
         setItems(deductToBeDeleted);
     }
+    const handleDeducts = (e, index) => {
+        const {name, value} = e.target;
+        const deducts = [...items2];
+        deducts[index][name] = value;
+        setItems2(deducts);
+        console.log(items2);
+    }
+    //--------------------------------------------------
     
   return (
     <div className={styles.salaryForm}>
