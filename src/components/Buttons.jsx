@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import closeIcon from "../assets/closeIcon.png";
 import styles from "../component_css/buttons.module.css";
 import addIcon from "../assets/addIcon.png";
 import resetIcon from "../assets/resetIcon.png";
+import { GlobalContext } from '../context/global_context';
 
 export function Reset(props) {
     const {
@@ -23,6 +24,7 @@ export function AddingButton(props) {
         title,
         onClick
     } = props;
+
   return (
     <div className={styles.addingButton}>
         <button onClick={onClick}>
@@ -35,7 +37,8 @@ export function AddingButton(props) {
 export function Close(props) {
     const {
         title,
-        onClick
+        onClick,
+        index
     } = props;
   return (
     <div className={styles.closeButton}>

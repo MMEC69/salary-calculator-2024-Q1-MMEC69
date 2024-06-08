@@ -5,13 +5,10 @@ import { GlobalContext } from '../context/global_context';
 
 export function SalaryReport() {
     const {
-        salaryDetails, 
-        setSalaryDetails
+        basicSalary, 
+        grossEarning,
+        grossDeduct
     } = useContext(GlobalContext);
-
-    const {
-        basicSalary
-    } = salaryDetails;
 
     return (
         <div className={styles.salaryReport}>
@@ -52,10 +49,10 @@ export function SalaryReport() {
                         title = {basicSalary}
                     />
                     <ContentText
-                        title = ""
+                        title = {grossEarning}
                     />
                     <ContentText
-                        title = ""
+                        title = {`- ${grossDeduct}`}
                     />
                     <ContentText
                         title = ""
